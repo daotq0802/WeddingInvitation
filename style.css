@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Fjalla+One&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,400;1,100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.page {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.welcome-page {
+  font-family: "Great Vibes", cursive;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-page img {
+  position: absolute;
+  z-index: -1;
+  width: 350px;
+  height: 80vh;
+  inset: 0;
+  margin: auto;
+  border-radius: 25px;
+  box-shadow: 0 0 20px #5f5f5f,
+    0 0 30px #5f5f5f,
+    0 0 40px #5f5f5f;
+}
+
+.welcome-page p:nth-child(2) {
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  font-size: 1.4rem;
+  transform: translateX(-50%);
+  word-spacing: 5px;
+  color: white;
+  text-shadow: 1px 2px 1px black;
+}
+
+.welcome-page p:nth-child(4) {
+  position: absolute;
+  bottom: 15vh;
+  left: 50%;
+  color: white;
+  word-spacing: 5px;
+  transform: translateX(-50%);
+  text-shadow: 1px 2px 1px black;
+}
+
+.welcome-page :nth-child(3) {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  text-shadow: 4px 4px 2px black;
+  color: white;
+  top: 20vh;
+  letter-spacing: 2px;
+}
+
+.story-page {
+  background-image: linear-gradient(to top, white, #b6b6b6);
+  position: relative;
+}
+
+.story-page::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-image: linear-gradient(to top, black 30%, transparent);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.story-page .carousel .item {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 1s ease-out;
+
+}
+
+.story-page .carousel .item.active {
+  opacity: 1;
+}
+
+.story-page .carousel .item .content {
+  position: absolute;
+  z-index: 22;
+  color: white;
+  top: 50px;
+  left: 20px;
+}
+
+.story-page .carousel .item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  display: flex;
+  margin: auto;
+}
+
+.thumbnails {
+  position: absolute;
+  bottom: 0;
+  z-index: 11;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  overflow: auto;
+  justify-content: center;
+  padding: 0 25px
+}
+
+.thumbnails::-webkit-scrollbar {
+  width: 0;
+}
+
+.thumbnails .item {
+  height: 220px;
+  width: 150px;
+  filter: brightness(0.5);
+  transition: 0.5s;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.thumbnails .item:hover {
+  filter: brightness(1);
+}
+
+.thumbnails .item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.thumbnails .item.active {
+  filter: brightness(1.2);
+}
+
+.information {
+  padding: 20px;
+}
+
+.both-information {
+  display: flex;
+  width: 100%;
+}
+
+.groom-image,
+.bride-image {
+  flex: 1;
+}
+
+.bride-image,
+.groom-image {
+  text-align: center;
+}
+
+.bride-image img,
+.groom-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.bride-image p:nth-child(1),
+.groom-image p:nth-child(1) {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.bride-image p:nth-child(3),
+.groom-image p:nth-child(3) {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  word-spacing: 5px;
+}
+
+.location {
+  display: flex;
+  color: black;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  letter-spacing: 3px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.middle-image {
+  flex: 2;
+}
+
+.middle-image img {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.locate-image {
+  flex: 1;
+}
+
+.locate-image img {
+  width: 70%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+.groom-locate,
+.bride-locate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  padding: 5px;
+  height: 70px;
+}
+
+.groom-locate p:nth-child(1),
+.bride-locate p:nth-child(1) {
+  font-weight: bold;
+}
+
+.groom-locate p:nth-child(2),
+.bride-locate p:nth-child(2) {
+  font-style: italic;
+}
+
+.groom-locate p:nth-child(3),
+.bride-locate p:nth-child(3) {
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+
+
+.message-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  position: absolute;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enjoy-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.enjoy-form input {
+  height: 10px;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  border: thin solid #7e7b7b;
+  font-family: "Oswald", sans-serif;
+
+}
+
+.attendance-select {
+  display: flex;
+  gap: 50px;
+}
+
+button {
+  font-family: "Oswald", sans-serif;
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  border: thin solid #b6b6b6;
+  background: #005cc8;
+  color: white;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.cant-enjoy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  display: none;
+}
+
+.cant-enjoy textarea {
+  height: 148px;
+  padding: 10px;
+  text-wrap: 100px;
+  outline: none;
+  border-radius: 10px;
+  border: thin solid #7e7b7b;
+  font-family: "Oswald", sans-serif;
+}
+
+.gift-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.gift-page img {
+  width: 100px;
+  height: 100px;
+}
+
+.japan-bank,
+.vietnam-bank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  height: 80vh;
+  border: thin solid #7e7b7b;
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+#countdown {
+  padding: 5px;
+  margin-top: 10px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: black;
+  border-radius: 10px;
+  background-color: #7e7b7b;
+}
+
+.countdown-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.countdown-view label {
+  font-size: 1.2rem;
+  color: lightskyblue;
+  text-shadow:
+    0 0 5px lightskyblue,
+    0 0 10px lightskyblue,
+    0 0 15px lightskyblue,
+    0 0 20px lightskyblue,
+    0 0 25px lightskyblue,
+    0 0 30px lightskyblue;
+}
+
+.countdown-view span {
+  font-size: 0.7rem;
+  font-style: italic;
+  color: white;
+}
+
+@media screen and (max-width: 678px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .welcome-page h1, .welcome-page p{
+    text-align: center;
+    width: 100%;
+  }
+  .welcome-page h1{
+    font-size: 2rem;
+  }
+
+  .welcome-page p{
+    font-size: 1.5rem;
+  }
+
+  .information{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .both-information, .information .location{
+    width: 100%;
+    margin-top: 15px;
+  }
+  .location{
+    margin:0;
+    display: grid;
+    grid-template-areas: 
+    'top top'
+    'groom bride';
+  }
+
+  .middle-image{
+    grid-area: top;
+  }
+
+  form p{
+    text-align: center;
+  }
+
+  .gift-page{
+    flex-direction: column;
+  }
+
+  .gift-page .japan-bank, .vietnam-bank{
+    width: 80%;
+    height: 300px;
+  }
+}
