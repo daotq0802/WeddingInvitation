@@ -441,7 +441,7 @@ button {
   }
 
   .infor-page {
-    grid-template-rows: 20% 20% 20% 20% 15%;
+    grid-template-rows: 20% 20% 20% auto auto;
     grid-template-columns: 1fr 1fr;
     width: 95%;
     grid-template-areas:
@@ -502,7 +502,7 @@ button {
   }
 
   .japan-bank img, .vietnam-bank img{
-    width: 150px;
-    height: 150px;
+    width: 30%;
+    height: 30%;
   }
 }
