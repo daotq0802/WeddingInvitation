@@ -439,4 +439,70 @@ button {
   .slider .slides:nth-child(5) {
     left: 400px;
   }
+
+  .infor-page {
+    grid-template-rows: 20% 20% 20% 20% 15%;
+    grid-template-columns: 1fr 1fr;
+    width: 95%;
+    grid-template-areas:
+      'groom bride'
+      'middle middle'
+      'left right'
+      'groom-locate bride-locate'
+      'countdown countdown';
+    align-content: center;
+    justify-content: center;
+  }
+
+  .groom-image img,
+  .bride-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .groom-image p:nth-child(1),
+  .bride-image p:nth-child(1),
+  .groom-image p:nth-child(3),
+  .bride-image p:nth-child(3) {
+    font-size: 1.3rem;
+  }
+
+  .groom-locate p:nth-child(1),
+  .bride-locate p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .groom-locate p:nth-child(2),
+  .bride-locate p:nth-child(2) {
+    font-size: 1.7rem;
+  }
+
+  form p {
+    text-align: center;
+  }
+
+  .enjoy-form,
+  .cant-enjoy,
+  .input-contain {
+    width: 100%;
+  }
+
+  .input-contain input,
+  textarea {
+    width: 80%;
+  }
+
+  .gift-page{
+    flex-direction: column;
+  }
+  .japan-bank, .vietnam-bank{
+    width: 80%;
+    height: 40%;
+    font-size: 1.2rem;
+  }
+
+  .japan-bank img, .vietnam-bank img{
+    width: 150px;
+    height: 150px;
+  }
 }
