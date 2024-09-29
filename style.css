@@ -402,3 +402,41 @@ button {
   gap: 10px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
 }
+
+@media (width <=678px) {
+  .welcome-page img {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+    align-items: center;
+  }
+
+  .slider {
+    inset: 40px 40px 200px 40px;
+  }
+
+  .slider .slides {
+    width: 150px;
+    height: 150px;
+    top: initial;
+    bottom: -250px
+  }
+
+  .slider .slides:nth-child(1),
+  .slider .slides:nth-child(2) {
+    top: initial;
+    bottom: 0px;
+  }
+
+  .slider .slides:nth-child(3) {
+    left: 0;
+  }
+
+  .slider .slides:nth-child(4) {
+    left: 200px;
+  }
+
+  .slider .slides:nth-child(5) {
+    left: 400px;
+  }
+}
