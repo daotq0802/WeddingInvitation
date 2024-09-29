@@ -1,464 +1,404 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Fjalla+One&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,400;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700');
 
 * {
   margin: 0;
   padding: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
-html,
-body {
+img {
+  width: 200px;
+  height: 200px;
+}
+
+html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
 }
 
-.container {
-  width: 100%;
+body {
+  display: grid;
+  grid-template-rows: 100vh 100vh 100vh 100vh 100vh;
+  grid-template-areas:
+    'page1'
+    'page2'
+    'page3'
+    'page4'
+    'page5';
 }
 
 .page {
-  height: 100vh;
   scroll-snap-align: start;
+  height: 100%;
+  width: 100vw;
   position: relative;
 }
 
+/* Trang mở đầu */
 .welcome-page {
-  font-family: "Great Vibes", cursive;
-  display: flex;
-  flex-direction: column;
+  grid-area: page1;
+  width: 100%;
+}
+
+.welcome-page * {
+  position: absolute;
+  inset: 0;
+  margin: auto;
 }
 
 .welcome-page img {
-  position: absolute;
-  z-index: -1;
-  width: 350px;
-  height: 80vh;
-  inset: 0;
-  margin: auto;
+  min-width: 400px;
+  max-width: 50%;
+  height: 80%;
   border-radius: 25px;
-  box-shadow: 0 0 20px #5f5f5f,
-    0 0 30px #5f5f5f,
-    0 0 40px #5f5f5f;
+  box-shadow:
+    0 0 10px silver,
+    0 0 20px silver,
+    0 0 30px silver,
+    0 0 40px silver,
+    0 0 50px silver;
 }
 
 .welcome-page p:nth-child(2) {
-  position: absolute;
-  top: 13vh;
-  left: 50%;
-  font-size: 1.4rem;
-  transform: translateX(-50%);
-  word-spacing: 5px;
-  color: white;
-  text-shadow: 1px 2px 1px black;
+  justify-self: center;
+  top: 15%;
+  font-size: 1.5em;
+}
+
+.welcome-page h1:nth-child(3) {
+  justify-self: center;
+  top: 20%;
+  font-size: 2.5em;
 }
 
 .welcome-page p:nth-child(4) {
-  position: absolute;
-  bottom: 15vh;
-  left: 50%;
-  color: white;
-  word-spacing: 5px;
-  transform: translateX(-50%);
-  text-shadow: 1px 2px 1px black;
+  justify-self: center;
+  top: 80%;
+  font-size: 1.5em;
 }
 
-.welcome-page :nth-child(3) {
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  text-shadow: 4px 4px 2px black;
-  color: white;
-  top: 20vh;
-  letter-spacing: 2px;
-}
-
+/* Image slider */
 .story-page {
-  background-image: linear-gradient(to top, white, #b6b6b6);
-  position: relative;
-}
-
-.story-page::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  background-image: linear-gradient(to top, black 30%, transparent);
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-}
-
-.story-page .carousel .item {
-  position: absolute;
-  inset: 0;
+  grid-area: page2;
+  display: flex;
   overflow: hidden;
-  opacity: 0;
-  transition: 1s ease-out;
-
-}
-
-.story-page .carousel .item.active {
-  opacity: 1;
-}
-
-.story-page .carousel .item .content {
-  position: absolute;
-  z-index: 22;
-  color: white;
-  top: 50px;
-  left: 20px;
-}
-
-.story-page .carousel .item img {
-  width: 100%;
-  height: 100vh;
-  object-fit: fill;
-  display: flex;
-  margin: auto;
-}
-
-.thumbnails {
-  position: absolute;
-  bottom: 0;
-  z-index: 11;
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  height: 250px;
-  box-sizing: border-box;
-  overflow: auto;
   justify-content: center;
-  padding: 0 25px
+  align-items: center;
 }
 
-.thumbnails::-webkit-scrollbar {
-  width: 0;
+.slider {
+  position: absolute;
+  inset: 100px 200px 100px 100px;
+  background: #000;
+  border-radius: 20px;
 }
 
-.thumbnails .item {
-  height: 220px;
-  width: 150px;
-  filter: brightness(0.5);
-  transition: 0.5s;
-  flex-shrink: 0;
-  cursor: pointer;
+.slider .slides {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 320px;
+  background: var(--img);
+  border-radius: 20px;
+  transition: 1.5s ease;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
 }
 
-.thumbnails .item:hover {
-  filter: brightness(1);
-}
-
-.thumbnails .item img {
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+  transform: translateY(0);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  background-size: cover;
 }
 
-.thumbnails .item.active {
-  filter: brightness(1.2);
+.slider .slides:nth-child(3) {
+  left: calc(55% + 240px);
+  box-shadow: 0 0 25px white;
 }
 
-.information {
-  padding: 20px;
+.slider .slides:nth-child(4) {
+  left: calc(55% + 490px);
+  box-shadow: 0 0 25px white;
 }
 
-.both-information {
-  display: flex;
-  width: 100%;
+.slider .slides:nth-child(5) {
+  left: calc(55% + 740px);
+  box-shadow: 0 0 25px white;
 }
 
-.groom-image,
-.bride-image {
-  flex: 1;
+/* Information */
+.infor-page {
+  width: 60%;
+  align-self: center;
+  justify-self: center;
+  grid-area: page3;
+  display: grid;
+  grid-template-rows: 300px 400px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    'groom groom bride bride'
+    'left middle middle right'
+    'groom-locate countdown countdown bride-locate'
 }
 
-.bride-image,
 .groom-image {
-  text-align: center;
-}
-
-.bride-image img,
-.groom-image img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.bride-image p:nth-child(1),
-.groom-image p:nth-child(1) {
-  font-size: 1.3rem;
-  font-weight: bolder;
-  letter-spacing: 2px;
-}
-
-.bride-image p:nth-child(3),
-.groom-image p:nth-child(3) {
-  font-size: 1.3rem;
-  font-weight: bolder;
-  word-spacing: 5px;
-}
-
-.location {
-  display: flex;
-  color: black;
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  letter-spacing: 3px;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.middle-image {
-  flex: 2;
-}
-
-.middle-image img {
-  height: 200px;
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 100%;
+  grid-area: groom;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-align: center;
 }
 
-.locate-image {
-  flex: 1;
-}
-
-.locate-image img {
-  width: 70%;
+.groom-image img,
+.bride-image img {
   height: 200px;
+  width: 200px;
   border-radius: 10px;
-  box-shadow: 0 0 10px black;
+}
+
+.groom-image p:nth-child(1),
+.bride-image p:nth-child(1) {
+  font-size: 2rem;
+}
+
+.bride-image {
+  width: 100%;
+  height: 100%;
+  grid-area: bride;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.locate-image:nth-child(3) {
+  grid-area: groom-locate;
+}
+
+.infor-page img:nth-child(3) {
+  width: 80%;
+  grid-area: left;
+  height: 100%;
+}
+
+.infor-page img:nth-child(4) {
+  width: 100%;
+  height: 100%;
+  grid-area: middle;
+}
+
+.infor-page img:nth-child(5) {
+  width: 80%;
+  height: 100%;
+  grid-area: right;
+}
+
+.infor-page img:nth-child(3),
+.infor-page img:nth-child(4),
+.infor-page img:nth-child(5) {
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  justify-self: center;
+}
+
+.groom-locate {
+  grid-area: groom-locate;
+}
+
+.bride-locate {
+  grid-area: bride-locate;
 }
 
 .groom-locate,
 .bride-locate {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
   border-radius: 10px;
-  background-color: #e0e0e0;
-  padding: 5px;
-  height: 70px;
+  padding: 10px;
 }
 
 .groom-locate p:nth-child(1),
 .bride-locate p:nth-child(1) {
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 .groom-locate p:nth-child(2),
 .bride-locate p:nth-child(2) {
+  font-size: 1.7em;
   font-style: italic;
+  color: red;
 }
 
-.groom-locate p:nth-child(3),
-.bride-locate p:nth-child(3) {
-  font-style: italic;
-  font-size: 0.7rem;
-}
-
-
-
-.message-page {
+#countdown {
+  grid-area: countdown;
   display: flex;
+  justify-content: center;
+}
+
+.countdown-view {
+  width: 25%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-form {
-  position: absolute;
-  width: 60%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
+.countdown-view label {
+  font-size: 2.5em;
+  color: lightskyblue;
+  text-shadow:
+    0 0 5px lightblue,
+    0 0 15px lightblue,
+    0 0 25px lightblue,
+    0 0 35px lightblue,
+    0 0 45px lightblue,
+    0 0 55px lightblue;
 }
 
-.enjoy-form {
+.countdown-view span {
+  color: silver;
+  font-style: italic;
+}
+
+#countdown,
+.groom-locate,
+.bride-locate {
+  justify-self: center;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.enjoy-form input {
-  height: 10px;
-  padding: 10px;
-  outline: none;
-  border-radius: 10px;
-  border: thin solid #7e7b7b;
-  font-family: "Oswald", sans-serif;
+.message-page {
+  grid-area: page4;
+}
 
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .attendance-select {
   display: flex;
   gap: 50px;
+  font-size: 1.5rem;
+}
+
+.attendance,
+.not-attendance {
+  display: flex;
+  line-height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+form h1 {
+  font-size: 2.5rem;
+}
+
+form p {
+  font-size: 1.7rem;
+}
+
+.enjoy-form,
+.cant-enjoy {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 350px;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.input-contain {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-contain input {
+  width: 500px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.3rem;
+  border: thin solid rgba(0, 0, 0, 0.5);
+  outline: none;
+  text-align: center;
+}
+
+input::placeholder {
+  color: lightcoral;
+}
+
+textarea {
+  width: 500px;
+  height: 250px;
+  padding: 25px;
+  outline: thin solid lightcoral;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+}
+
+textarea::placeholder {
+  color: lightcoral;
 }
 
 button {
-  font-family: "Oswald", sans-serif;
   width: 150px;
-  height: 30px;
-  border-radius: 25px;
-  border: thin solid #b6b6b6;
-  background: #005cc8;
+  height: 40px;
+  border-radius: 15px;
+  border: thin solid rgba(0, 0, 0, 0.5);
+  background: lightcoral;
   color: white;
-  margin-left: 50%;
-  transform: translateX(-50%);
 }
 
 .cant-enjoy {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   display: none;
 }
 
-.cant-enjoy textarea {
-  height: 148px;
-  padding: 10px;
-  text-wrap: 100px;
-  outline: none;
-  border-radius: 10px;
-  border: thin solid #7e7b7b;
-  font-family: "Oswald", sans-serif;
-}
-
 .gift-page {
+  grid-area: page5;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-}
-
-.gift-page img {
-  width: 100px;
-  height: 100px;
+  gap: 20px;
 }
 
 .japan-bank,
 .vietnam-bank {
   display: flex;
   flex-direction: column;
+  width: 500px;
+  height: 500px;
+  border: thin solid black;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
   gap: 10px;
-  width: 400px;
-  height: 80vh;
-  border: thin solid #7e7b7b;
-  border-radius: 10px;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
 }
-
-#countdown {
-  padding: 5px;
-  margin-top: 10px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  color: black;
-  border-radius: 10px;
-  background-color: #7e7b7b;
-}
-
-.countdown-view {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-}
-
-.countdown-view label {
-  font-size: 1.2rem;
-  color: lightskyblue;
-  text-shadow:
-    0 0 5px lightskyblue,
-    0 0 10px lightskyblue,
-    0 0 15px lightskyblue,
-    0 0 20px lightskyblue,
-    0 0 25px lightskyblue,
-    0 0 30px lightskyblue;
-}
-
-.countdown-view span {
-  font-size: 0.7rem;
-  font-style: italic;
-  color: white;
-}
-
-/* @media (max-width: 678px) {
-  * {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-  }
-
-  .page{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .welcome-page h1, .welcome-page p{
-    text-align: center;
-    width: 100%;
-  }
-  .welcome-page h1{
-    font-size: 2rem;
-  }
-
-  .welcome-page p{
-    font-size: 1.5rem;
-  }
-
-  .information{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-  .both-information, .information .location{
-    width: 100%;
-    margin-top: 15px;
-  }
-  .location{
-    margin:0;
-    display: grid;
-    grid-template-areas: 
-    'top top'
-    'groom bride';
-  }
-
-  .middle-image{
-    grid-area: top;
-  }
-
-  form p{
-    text-align: center;
-  }
-
-  .gift-page{
-    flex-direction: column;
-  }
-
-  .gift-page .japan-bank, .vietnam-bank{
-    width: 80%;
-    height: 300px;
-  }
-} */

@@ -39,47 +39,22 @@ var x = setInterval(function () {
   }
 }, 1000);
 
-//Hình ảnh slider
-let items = document.querySelectorAll(".carousel .item");
-let thumnails = document.querySelectorAll(".thumbnails .item");
-let countItem = items.length;
-let itemActive = 0;
-// Sau 3s chuyển đổi ảnh 1 lần
+//hình ảnh slide show
+let slider = document.querySelector(".slider");
 setInterval(() => {
-  itemActive++;
-  showImage();
-}, 3000);
+  let slides = document.querySelectorAll(".slides");
+  slider.appendChild(slides[0]);
+}, 5000);
 
-//Phương thức đổi vị trí ảnh cần hiển thị
-function showImage() {
-  if (itemActive >= countItem) {
-    itemActive = 0;
-  }
-  let oldItems = document.querySelector(".carousel .item.active");
-  let oldThumnails = document.querySelector(".thumbnails .item.active");
-  oldItems.classList.remove("active");
-  oldThumnails.classList.remove("active");
-
-  items[itemActive].classList.add("active");
-  thumnails[itemActive].classList.add("active");
-}
-
-//Click vào ảnh nhỏ hiển thị ảnh đó
-thumnails.forEach((thumnail, index) => {
-  thumnail.addEventListener("click", () => {
-    itemActive = index;
-    showImage();
-  });
+//
+let attend = document.getElementsByName("attendance")[0];
+let unattend = document.getElementsByName("attendance")[1];
+attend.addEventListener("change", () => {
+  document.querySelector(".cant-enjoy").style.display = "none";
+  document.querySelector(".enjoy-form").style.display = "flex";
 });
 
-let attend = document.getElementsByName('attendance')[0]
-let unattend = document.getElementsByName('attendance')[1]
-attend.addEventListener('change',()=>{
-  document.querySelector('.cant-enjoy').style.display = 'none';
-  document.querySelector('.enjoy-form').style.display='flex'
-});
-
-unattend.addEventListener('change',()=>{
-  document.querySelector('.cant-enjoy').style.display = 'flex';
-  document.querySelector('.enjoy-form').style.display='none'
+unattend.addEventListener("change", () => {
+  document.querySelector(".cant-enjoy").style.display = "flex";
+  document.querySelector(".enjoy-form").style.display = "none";
 });
