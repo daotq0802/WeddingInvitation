@@ -467,7 +467,7 @@ button {
   }
 
   .infor-page {
-    grid-template-rows: 20% 20% 20% auto auto;
+    grid-template-rows: auto 20% 20% auto auto;
     grid-template-columns: 1fr 1fr;
     width: 95%;
     grid-template-areas:
