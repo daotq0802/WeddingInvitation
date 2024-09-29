@@ -166,7 +166,6 @@ body {
   width: 100%;
   height: 100%;
   grid-area: groom;
-  font-size: 1.7em;
   font-weight: bold;
   text-align: center;
 }
@@ -180,14 +179,18 @@ body {
 
 .groom-image p:nth-child(1),
 .bride-image p:nth-child(1) {
-  font-size: 1.2em;
+  font-size: 1.7em;
+}
+
+.groom-image p:nth-child(3),
+.bride-image p:nth-child(3) {
+  font-size: 2em;
 }
 
 .bride-image {
   width: 100%;
   height: 100%;
   grid-area: bride;
-  font-size: 1.5em;
   font-weight: bold;
   text-align: center;
 }
@@ -481,17 +484,20 @@ button {
     padding: 3px;
   }
 
+  .groom-image p:nth-child(1),
+.bride-image p:nth-child(1) {
+  font-size: 1.2em;
+}
+
+.groom-image p:nth-child(3),
+.bride-image p:nth-child(3) {
+  font-size: 1.5em;
+}
+
   .groom-image img,
   .bride-image img {
     width: 100px;
     height: 100px;
-  }
-
-  .groom-image p:nth-child(1),
-  .bride-image p:nth-child(1),
-  .groom-image p:nth-child(3),
-  .bride-image p:nth-child(3) {
-    font-size: 0.8em;
   }
 
   .groom-locate p:nth-child(1),
@@ -543,7 +549,7 @@ button {
   .japan-bank, .vietnam-bank{
     width: 80%;
     height: 40%;
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .japan-bank img, .vietnam-bank img{
