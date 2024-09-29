@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700');
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -46,11 +46,16 @@ body {
   position: absolute;
   inset: 0;
   margin: auto;
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+  color: white;
+  letter-spacing: 5px;
+  text-shadow: 0 0 25px black;
+  font-weight: bold;
 }
 
 .welcome-page img {
-  min-width: 400px;
-  max-width: 50%;
+  width: 80%;
   height: 80%;
   border-radius: 25px;
   box-shadow:
@@ -63,20 +68,20 @@ body {
 
 .welcome-page p:nth-child(2) {
   justify-self: center;
-  top: 15%;
-  font-size: 1.5em;
+  top: 12%;
+  font-size: 3em;
 }
 
 .welcome-page h1:nth-child(3) {
   justify-self: center;
   top: 20%;
-  font-size: 2.5em;
+  font-size: 5em;
 }
 
 .welcome-page p:nth-child(4) {
   justify-self: center;
   top: 80%;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 /* Image slider */
@@ -411,6 +416,19 @@ button {
     align-items: center;
   }
 
+  .welcome-page p:nth-child(2){
+    top: 15%;
+    font-size: 1.5em;
+  }
+
+  .welcome-page h1:nth-child(3){
+    font-size: 1.8em;
+  }
+
+  .welcome-page p:nth-child(4){
+    font-size: 1em;
+  }
+
   .slider {
     inset: 40px 40px 200px 40px;
   }
@@ -433,7 +451,7 @@ button {
   }
 
   .slider .slides:nth-child(4) {
-    left: 200px;
+    left: 180px;
   }
 
   .slider .slides:nth-child(5) {
@@ -464,7 +482,7 @@ button {
   .bride-image p:nth-child(1),
   .groom-image p:nth-child(3),
   .bride-image p:nth-child(3) {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .groom-locate p:nth-child(1),
@@ -498,7 +516,7 @@ button {
   .japan-bank, .vietnam-bank{
     width: 80%;
     height: 40%;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .japan-bank img, .vietnam-bank img{
