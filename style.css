@@ -48,9 +48,14 @@ body {
   margin: auto;
   font-family: "Great Vibes", cursive;
   text-align: center;
-  color: white;
+  color: lightcoral;
   letter-spacing: 5px;
-  text-shadow: 0 0 25px black;
+  text-shadow: 1px 1px 5px black,
+  2px 2px 15px lightcoral,
+  0 0 25px lightcoral,
+  0 0 35px lightcoral,
+  0 0 45px lightcoral,
+  0 0 55px lightcoral;
   font-weight: bold;
 }
 
@@ -175,7 +180,7 @@ body {
 
 .groom-image p:nth-child(1),
 .bride-image p:nth-child(1) {
-  font-size: 2rem;
+  font-size: 1.2em;
 }
 
 .bride-image {
@@ -263,8 +268,8 @@ body {
   font-size: 2.5em;
   color: lightskyblue;
   text-shadow:
-    0 0 5px lightblue,
-    0 0 15px lightblue,
+    1px 1px 5px black,
+    2px 2px 15px lightblue,
     0 0 25px lightblue,
     0 0 35px lightblue,
     0 0 45px lightblue,
@@ -302,7 +307,7 @@ form {
 .attendance-select {
   display: flex;
   gap: 50px;
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 .attendance,
@@ -315,11 +320,11 @@ form {
 }
 
 form h1 {
-  font-size: 2.5rem;
+  font-size: 2.5em;
 }
 
 form p {
-  font-size: 1.7rem;
+  font-size: 1.7em;
 }
 
 .enjoy-form,
@@ -348,7 +353,7 @@ form p {
   height: 40px;
   border-radius: 10px;
   padding: 20px;
-  font-size: 1.3rem;
+  font-size: 1.3em;
   border: thin solid rgba(0, 0, 0, 0.5);
   outline: none;
   text-align: center;
@@ -365,7 +370,7 @@ textarea {
   outline: thin solid lightcoral;
   border-radius: 25px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 textarea::placeholder {
@@ -403,7 +408,7 @@ button {
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   gap: 10px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
 }
@@ -418,19 +423,19 @@ button {
 
   .welcome-page p:nth-child(2){
     top: 15%;
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .welcome-page h1:nth-child(3){
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 
   .welcome-page p:nth-child(4){
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .slider {
-    inset: 40px 40px 200px 40px;
+    inset: 20px 20px 200px 20px;
   }
 
   .slider .slides {
@@ -443,7 +448,7 @@ button {
   .slider .slides:nth-child(1),
   .slider .slides:nth-child(2) {
     top: initial;
-    bottom: 0px;
+    bottom: 0;
   }
 
   .slider .slides:nth-child(3) {
@@ -451,7 +456,7 @@ button {
   }
 
   .slider .slides:nth-child(4) {
-    left: 180px;
+    left: 200px;
   }
 
   .slider .slides:nth-child(5) {
@@ -472,6 +477,10 @@ button {
     justify-content: center;
   }
 
+  .groom-locate, .bride-locate{
+    padding: 3px;
+  }
+
   .groom-image img,
   .bride-image img {
     width: 100px;
@@ -482,17 +491,35 @@ button {
   .bride-image p:nth-child(1),
   .groom-image p:nth-child(3),
   .bride-image p:nth-child(3) {
-    font-size: 1.1rem;
+    font-size: 0.8em;
   }
 
   .groom-locate p:nth-child(1),
   .bride-locate p:nth-child(1) {
-    font-size: 1.5rem;
+    font-size: 0.9em;
+  }
+
+  .groom-locate i,
+  .bride-locate i {
+    font-size: 0.7em;
   }
 
   .groom-locate p:nth-child(2),
   .bride-locate p:nth-child(2) {
-    font-size: 1.7rem;
+    font-size: 1em;
+  }
+
+  .countdown-view{
+    padding: 5px;
+    height: auto;
+  }
+
+  .countdown-view label{
+    font-size: 1.7em;
+  }
+
+  .countdown-view span{
+    font-size: 1em;
   }
 
   form p {
