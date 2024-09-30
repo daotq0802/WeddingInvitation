@@ -3,18 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a4416efdce.js" crossorigin="anonymous"></script>
   <title>Our Wedding</title>
 </head>
 
 <body>
   <div class="welcome-page page">
-    <img src="./assets/welcome-image.jpg" >
+    <img src="./assets/welcome-image.jpg">
     <p>The wedding of</p>
     <h1>Ngọc Xuân & Quý Đạo</h1>
     <p>Thứ 4, 25 tháng 12 năm 2024</p>
@@ -32,19 +30,19 @@
 
     <div class="groom-image">
       <p>Chú Rể</p>
-      <img src="./assets/image1.jpg" >
+      <img src="./assets/image1.jpg">
       <p>Quý Đạo</p>
     </div>
 
     <div class="bride-image">
       <p>Cô Dâu</p>
-      <img src="./assets/image2.jpg" >
+      <img src="./assets/image2.jpg">
       <p>Ngọc Xuân</p>
     </div>
 
-    <img src="./assets/image5.jpg" >
-    <img src="./assets/image7.jpg" >
-    <img src="./assets/image6.jpg" >
+    <img src="./assets/image5.jpg">
+    <img src="./assets/image7.jpg">
+    <img src="./assets/image6.jpg">
 
     <div class="groom-locate">
       <p>Hà Nội</p>
@@ -69,7 +67,7 @@
           <input type="radio" checked name="attendance" id="enjoy">
           <label for="enjoy">Tham dự</label>
         </div>
-        
+
         <div class="not-attendance">
           <input type="radio" name="attendance" id="unenjoy">
           <label for="unenjoy">Rất tiếc</label>
@@ -82,11 +80,11 @@
           <input type="text" placeholder="Số điện thoại" id="guest-phone">
           <input type="text" placeholder="Số người đi cùng" id="guest-partner">
         </div>
-        <button>Gửi thông tin</button>
+        <button type="button" id="test">Gửi thông tin</button>
       </div>
 
       <div class="cant-enjoy">
-        <textarea placeholder="Mong nhận được lời chúc từ anh/chị" name="" id=""></textarea>
+        <textarea placeholder="Mong nhận được lời chúc từ anh/chị" id="message"></textarea>
         <button>Gửi thông tin</button>
       </div>
     </form>
@@ -94,14 +92,14 @@
 
   <div class="gift-page page">
     <div class="japan-bank">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvgiLcTZhdOyV7dT2qEzwCDbASFv_VDHYfAg&s" >
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvgiLcTZhdOyV7dT2qEzwCDbASFv_VDHYfAg&s">
       <p>銀行名: ゆうちょ銀行</p>
       <p>支店番号: 10340</p>
       <p>名義: グエン ティ ゴック スン</p>
       <p>口座番号: 21673461</p>
     </div>
     <div class="vietnam-bank">
-      <img src="assets/QRSacombank.jpg" >
+      <img src="assets/QRSacombank.jpg">
 
       <p>Ngân hàng: Sacombank</p>
       <p>Chi nhánh: Kiên Giang</p>
@@ -109,7 +107,52 @@
       <p>Số tài khoản: 070063160669</p>
     </div>
   </div>
-  <script src="index.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4lAz1K8ajP1RcGMNDDnGKwZcz60_eboY",
+      authDomain: "weddinginvitation-816dd.firebaseapp.com",
+      databaseURL: "https://weddinginvitation-816dd-default-rtdb.firebaseio.com",
+      projectId: "weddinginvitation-816dd",
+      storageBucket: "weddinginvitation-816dd.appspot.com",
+      messagingSenderId: "1009849635487",
+      appId: "1:1009849635487:web:488d129a48c620449a88aa"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import { getDatabase, set, get, update, remove, ref, child }
+      from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+    const db = getDatabase()
+
+    let nameGuest = document.getElementById("guest-name");
+let emailGuest = document.getElementById("guest-email");
+let phoneGuest = document.getElementById("guest-phone");
+let partnerGuest = document.getElementById("guest-partner");
+let messageGuest = document.getElementById("message");
+
+    document.querySelector('#test').addEventListener('click', ()=>{
+  set(ref(db, "Attendance/" + phoneGuest.value), {
+    Name: nameGuest.value,
+    Email: emailGuest.value,
+    Phone: phoneGuest.value,
+    Partner: partnerGuest.value,
+  })
+    .then(() => {
+      alert("Cảm ơn!!");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}) 
+
+  </script>
+  <script type="module" src="index.js"></script>
 </body>
 
 </html>
