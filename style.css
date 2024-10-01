@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -51,11 +52,11 @@ body {
   color: lightcoral;
   letter-spacing: 5px;
   text-shadow: 1px 1px 5px black,
-  2px 2px 15px lightcoral,
-  0 0 25px lightcoral,
-  0 0 35px lightcoral,
-  0 0 45px lightcoral,
-  0 0 55px lightcoral;
+    2px 2px 15px lightcoral,
+    0 0 25px lightcoral,
+    0 0 35px lightcoral,
+    0 0 45px lightcoral,
+    0 0 55px lightcoral;
   font-weight: bold;
 }
 
@@ -351,7 +352,8 @@ form p {
   gap: 20px;
 }
 
-.input-contain input {
+.input-contain input,
+.cant-enjoy input {
   width: 500px;
   height: 40px;
   border-radius: 10px;
@@ -424,16 +426,16 @@ button {
     align-items: center;
   }
 
-  .welcome-page p:nth-child(2){
+  .welcome-page p:nth-child(2) {
     top: 15%;
     font-size: 1.3em;
   }
 
-  .welcome-page h1:nth-child(3){
+  .welcome-page h1:nth-child(3) {
     font-size: 1.6em;
   }
 
-  .welcome-page p:nth-child(4){
+  .welcome-page p:nth-child(4) {
     font-size: 1.2em;
   }
 
@@ -480,19 +482,20 @@ button {
     justify-content: center;
   }
 
-  .groom-locate, .bride-locate{
+  .groom-locate,
+  .bride-locate {
     padding: 3px;
   }
 
   .groom-image p:nth-child(1),
-.bride-image p:nth-child(1) {
-  font-size: 1.2em;
-}
+  .bride-image p:nth-child(1) {
+    font-size: 1.2em;
+  }
 
-.groom-image p:nth-child(3),
-.bride-image p:nth-child(3) {
-  font-size: 1.5em;
-}
+  .groom-image p:nth-child(3),
+  .bride-image p:nth-child(3) {
+    font-size: 1.5em;
+  }
 
   .groom-image img,
   .bride-image img {
@@ -515,16 +518,16 @@ button {
     font-size: 1em;
   }
 
-  .countdown-view{
+  .countdown-view {
     padding: 5px;
     height: auto;
   }
 
-  .countdown-view label{
+  .countdown-view label {
     font-size: 1.7em;
   }
 
-  .countdown-view span{
+  .countdown-view span {
     font-size: 1em;
   }
 
@@ -539,20 +542,24 @@ button {
   }
 
   .input-contain input,
+  .cant-enjoy input,
   textarea {
     width: 80%;
   }
 
-  .gift-page{
+  .gift-page {
     flex-direction: column;
   }
-  .japan-bank, .vietnam-bank{
+
+  .japan-bank,
+  .vietnam-bank {
     width: 80%;
     height: 40%;
     font-size: 1em;
   }
 
-  .japan-bank img, .vietnam-bank img{
+  .japan-bank img,
+  .vietnam-bank img {
     width: 30%;
     height: 30%;
   }
